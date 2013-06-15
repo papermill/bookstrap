@@ -2,7 +2,7 @@
 default: less
 
 less:
-	lessc bookstrap.less bookstrap.css
+	lessc --yui-compress bookstrap.less bookstrap.css
 	
 watch:
 	echo "Watching less files..."; \

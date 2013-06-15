@@ -37,7 +37,7 @@
   // Padding, to be divided by two and applied to the left and right of all columns
   @grid-gutter-width:         30px;
   // Point at which the navbar stops collapsing
-  @grid-float-breakpoint:     @screen-tablet;
+  @grid-float-breakpoint:     @screen-medium;
 
 
 @import "bootstrap3/less/mixins.less";
@@ -46,26 +46,26 @@
 @import "bootstrap3/less/normalize.less";
 @import "bootstrap3/less/print.less";
 
-// Core Cbootstrap3/less/SS
+// Core bootstrap3/less/CSS
 @import "bootstrap3/less/scaffolding.less";
 @import "bootstrap3/less/type.less";
 @import "bootstrap3/less/code.less";
-@import "bootstrap3/less/grid.less";
+// @import "bootstrap3/less/grid.less";
 
 @import "bootstrap3/less/tables.less";
 @import "bootstrap3/less/forms.less";
 @import "bootstrap3/less/buttons.less";
 
-// Components: common
+// Components: bootstrap3/less/common
 @import "bootstrap3/less/component-animations.less";
-@import "bootstrap3/less/glyphicons.less";
+// @import "bootstrap3/less/glyphicons.less";
 @import "bootstrap3/less/dropdowns.less";
 @import "bootstrap3/less/list-group.less";
 @import "bootstrap3/less/panels.less";
-@import "bootstrap3/less/wells.less";
+// @import "bootstrap3/less/wells.less";
 @import "bootstrap3/less/close.less";
 
-// Componbootstrap3/less/ents: Nav
+// Components: bootstrap3/less/Nav
 @import "bootstrap3/less/navs.less";
 @import "bootstrap3/less/navbar.less";
 @import "bootstrap3/less/button-groups.less";
@@ -73,39 +73,48 @@
 @import "bootstrap3/less/pagination.less";
 @import "bootstrap3/less/pager.less";
 
-// Components: Popovers
-/* @import "bootstrap3/less/modals.less"; */
+// Components: bootstrap3/less/Popovers
+@import "bootstrap3/less/modals.less";
 @import "bootstrap3/less/tooltip.less";
 @import "bootstrap3/less/popovers.less";
 
-// Components: Misc
-/* @import "bootstrap3/less/alerts.less"; */
-@import "bootstrap3/less/thumbnails.less";
+// Components: bootstrap3/less/Misc
+// @import "bootstrap3/less/alerts.less";
+// @import "bootstrap3/less/thumbnails.less";
 @import "bootstrap3/less/media.less";
-@import "bootstrap3/less/labels.less";
-/* @import "bootstrap3/less/badges.less"; */
-/* @import "bootstrap3/less/progress-bars.less"; */
-/* @import "bootstrap3/less/accordion.less"; */
-/* @import "bootstrap3/less/carousel.less"; */
-/* @import "bootstrap3/less/jumbotron.less"; */
+// @import "bootstrap3/less/labels.less";
+// @import "bootstrap3/less/badges.less";
+// @import "bootstrap3/less/progress-bars.less";
+// @import "bootstrap3/less/accordion.less";
+// @import "bootstrap3/less/carousel.less";
+// @import "bootstrap3/less/jumbotron.less";
 
-// Utility classes
+// bootstrap3/less/Utility classes
 @import "bootstrap3/less/utilities.less"; // Has to be last to override when necessary
 @import "bootstrap3/less/responsive-utilities.less";
 
 // Their docs, too! (for now)
-@import "bootstrap3/docs/assets/css/docs.css";
+// @import "bootstrap3/docs/assets/css/docs.css";
 
 
 /* COLORS */
-@black: hsl(0, 0%, 25%);
-@white: hsl(0, 0%, 98%);
+@dark: hsl(0, 0%, 25%);
+@light: hsl(0, 0%, 98%);
 
 /* HAX */
 #TOC {
   width: 22em;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  // text-shadow: 0 1px 0 @light;
+  // background-color: #f5f5f5;
+  // box-shadow: inset -1px 0 0 #e5e5e5;
 }
-.bs-docs-sidebar .nav > li > a {
+#TOC .nav > li > a {
   padding: 0;
 }
 
@@ -118,51 +127,86 @@ p {
   margin: 0 0 1em;
 }
 
-body, .bs-docs-docs, .bs-docs-container {
-  max-width: 90em;
-}
+/* LAYOUT */
 
-@media screen and (min-width: @grid-float-breakpoint) {
-  body, .bs-docs-docs {
-    padding-left: 28em;
-    padding-right: 4em;
-  }
-}
-
-@media screen and (min-width: @screen-large) {
-  body, .bs-docs-docs {
-    font-size: 14pt;
-  }
-}
-/*
-@media screen and (min-width: 1600px) {
-  body {
-    width: 72em;
-    margin: 0 auto;
-  }
-}
-*/
-
-/* /HAX */
-
-/* NAVBAR */
-body, #TOC {
-  padding-top: 6em;
-}
-@media screen and (min-width: 768px) {
-  body, #TOC {
-    padding-top: 4em;
-  }
-}
-
-/* TYPO */
 body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Tahoma, sans-serif;
   font-size: 12pt;
   line-height: 1.5em;
-  color: @black;
-  background: @white;
+  color: @dark;
+  background: @light;
 }
+
+body {
+  width: 72em;
+/*   margin: 0 auto; */ /* for dev */
+};
+
+#sheet {
+  width: 40em;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+
+section {
+  padding-top: 2.8em;
+  // width: 36em;
+}
+
+@media screen and (max-width: 40em) {
+
+  body {
+    font-size: 18pt;
+  }
+  
+}
+
+@media screen and (max-width: @grid-float-breakpoint) {
+
+  #TOC {
+	  visibility: hidden;
+	  display: none;
+  }
+  
+  // navbar
+  body, #TOC {
+    padding-top: 6em;
+  }
+  
+  
+}
+
+
+@media screen and (min-width: @grid-float-breakpoint) {
+	
+  #sheet {
+    padding-left: 24em;
+    padding-right: 4em;
+  }
+  
+  // navbar
+  article {
+    padding-top: 6em;
+  }
+  
+}
+
+@media screen and (min-width: @screen-large) {
+  body {
+    font-size: 14pt;
+  }
+}
+/*
+
+/* /HAX */
+
+/* NAVBAR */
+// body, #TOC {
+//   padding-top: 6em;
+// }
+
+/* TYPO */
 
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6
@@ -172,11 +216,11 @@ h1, h2, h3, h4, h5, h6,
 /*   line-height: 2em; */
 
   &, & a {
-    color: lighten(@black, 33%);
+    color: lighten(@dark, 33%);
   }
   
   &.title {
-    color: lighten(@black, 11%);
+    color: lighten(@dark, 11%);
   }
 }
 
@@ -203,7 +247,7 @@ margin-top: -0.3em;
 blockquote {
   padding: 1em 2em;
   margin: none;
-  background: darken(@white, 6%);
+  background: darken(@light, 6%);
 }
 
 /*
@@ -212,13 +256,13 @@ blockquote {
 }
 */
 
-#main {
+#sheet {
   h1, h2, h3, h4, h5, h6, 
   .h1, .h2, .h3, .h4, .h5, .h6
    {
   	font-weight: 100;
   	line-height: 1em;
-    margin-left: -1em;
+    // margin-left: -1em;
   }
 
   header {  
@@ -235,16 +279,6 @@ blockquote {
   margin-left: 0.3em;
 }
 
-/* LAYOUT */
-body {
-  width: 72em;
-/*   margin: 0 auto; */ /* for dev */
-};
-
-section, .bs-docs-section {
-  padding-top: 2.8em;
-  width: 36em;
-}
 
 /* TOC */
 
@@ -252,7 +286,7 @@ section, .bs-docs-section {
 	line-height: 1.5em; 
 	list-style-position: outside;
 	list-style: none;
-	background-color: darken(@white, 6%)
+	background-color: darken(@light, 6%)
 }
 
 #TOC ul {
@@ -269,7 +303,7 @@ section, .bs-docs-section {
 
 #TOC a {
   display: block;
-  color: lighten(@black, 11%);
+  color: lighten(@dark, 11%);
 /*   padding: 4px 25px; */
 }
 
@@ -279,7 +313,7 @@ section, .bs-docs-section {
 
   &:hover, 
   &:focus {
-    border-color: @black;
+    border-color: @dark;
   }
 }
 
@@ -326,39 +360,52 @@ section, .bs-docs-section {
 
 /* DEBUG */
 
-/* @debuggridcolor: rgba(200, 0, 0, .5); */
+/* @color: rgba(200, 0, 0, .5); */
 @debuggridcolor: hsla(0, 0%, 0%, 10%);
+@debuggridcolor_bg: hsla(0, 0%, 0%, 100%);
+@debuggridcolor_fun: hsla(0, 0%, 0%, 10%);
 
 /*
-body.debug {
 
-  &, & #TOC, & .navbar {
-    background-size: 2em 2em;
-    background-color: white;
-    background-image: -webkit-linear-gradient(transparent 50%, @debuggridcolor 50%,  @debuggridcolor),
-                      -webkit-linear-gradient(0deg, transparent 50%,  @debuggridcolor 50%,  @debuggridcolor);
-    background-image: -moz-linear-gradient(transparent 50%, @debuggridcolor 50%, @debuggridcolor),
-                      -moz-linear-gradient(0deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor);
-    background-image: linear-gradient(transparent 50%, @debuggridcolor 50%, @debuggridcolor),
-                      linear-gradient(90deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor);
-    -pie-background: linear-gradient(transparent 50%, @debuggridcolor 50%, @debuggridcolor) 0 0 / 50px 50px,
-                     linear-gradient(90deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor) 0 0 / 50px 50px white;
-    behavior: url(/pie/PIE.htc);
-  }
+.emGrid (@color)  {
+background-size: 2em 2em;
+background-color: white;
+background-image: -webkit-linear-gradient(transparent 50%, @color 50%,  @color),
+                  -webkit-linear-gradient(0deg, transparent 50%,  @color 50%,  @color);
+background-image: -moz-linear-gradient(transparent 50%, @color 50%, @color),
+                  -moz-linear-gradient(0deg, transparent 50%, @color 50%, @color);
+background-image: linear-gradient(transparent 50%, @color 50%, @color),
+                  linear-gradient(90deg, transparent 50%, @color 50%, @color);
+-pie-background: linear-gradient(transparent 50%, @color 50%, @color) 0 0 / 50px 50px,
+                 linear-gradient(90deg, transparent 50%, @color 50%, @color) 0 0 / 50px 50px white;
+behavior: url(/pie/PIE.htc);
 }
+
 */
 
+.emGrid (@color, @bgcolor) {
+  background-size: 2em 2em;
+  background-color: @bgcolor;
+  background-image: -webkit-linear-gradient(0deg, transparent 50%,  @color 50%,  @color);
+  background-image: -moz-linear-gradient(0deg, transparent 50%, @color 50%, @color);
+  background-image: linear-gradient(90deg, transparent 50%, @color 50%, @color);
+  -pie-background: linear-gradient(90deg, transparent 50%, @color 50%, @color) 0 0 / 2em 2em white;
+  behavior: url(/pie/PIE.htc);
+}
+
 body.debug {
 
-  &, & #TOC, & .navbar {
-    background-size: 2em 2em;
-    background-color: white;
-    background-image: -webkit-linear-gradient(0deg, transparent 50%,  @debuggridcolor 50%,  @debuggridcolor);
-    background-image: -moz-linear-gradient(0deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor);
-    background-image: linear-gradient(90deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor);
-    -pie-background: linear-gradient(90deg, transparent 50%, @debuggridcolor 50%, @debuggridcolor) 0 0 / 2em 2em white;
-    behavior: url(/pie/PIE.htc);
-  }
+    &, & #TOC, & .navbar {
+      .emGrid(@debuggridcolor, white);
+    }
+}
+
+body.fun {
+
+    &, & #TOC, & .navbar {
+	  background-color: black;
+      .emGrid(lightsalmon, lightblue);
+    }
 }
 
 
