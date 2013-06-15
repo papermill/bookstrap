@@ -119,6 +119,15 @@ var hacks = {
   
 }
   
+var bootstrap = function (document) {
+    
+  // add class `.nav` to all `<ul>` elements inside a `<nav>`:
+  $('nav ul').addClass('nav');
+  
+  util.debug('bootstrap(): done');
+  
+};
+  
 // loading
 function startup () {
   
@@ -126,8 +135,14 @@ function startup () {
   
   hacks.fixIDsAndHrefs();
   
+  bootstrap();
+  
   // activate bootstrap's scrollspy
-  $('#TOC').scrollspy();
+  $('body').scrollspy({
+    "target": "#TOC",
+    "offset": 25 //px
+  });
+  // $.fn.scrollspy().on('activate', function(){alert('a')})
   
   // util.TOC();
   
