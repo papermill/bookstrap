@@ -50,10 +50,13 @@ $endif$
 $endif$
 $if(toc)$
 <nav id="$idprefix$TOC">
+<p>Table of Contents:</p>
 $toc$
 </nav>
 $endif$
+<div class="container">
 $body$
+</div>
 $for(include-after)$
 $include-after$
 $endfor$
