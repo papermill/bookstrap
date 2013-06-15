@@ -1,4 +1,4 @@
-@import "bookstrap-base.less";
+@import "bookstrap.less";
 
 /* HAX */
 #TOC {
@@ -133,8 +133,13 @@ body {
 }
 
 #TOC ul li { 
-	font-weight: 700;
+	font-weight: 300;
 }
+#TOC ul li.active {
+  font-weight: 700;
+  background-color: @light;
+}
+
 #TOC ul li ul li { 
 	font-weight: 400;
 /* 	font-size: 0.85em; */
