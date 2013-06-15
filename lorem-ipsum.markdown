@@ -51,6 +51,22 @@ Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed augue ips
 
 Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Fusce vel dui. Sed in libero ut nibh placerat accumsan. Proin faucibus arcu quis ante. In consectetuer turpis ut velit.
 
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic:latin', 'Source+Code+Pro:200,300,400,500,600,700,900:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
 
 <script src="assets/jquery.js"></script>
+<script src="bootstrap3/_gh_pages/assets/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
 <script src="bookstrap.js"></script>
+
