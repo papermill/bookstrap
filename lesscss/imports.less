@@ -1,35 +1,10 @@
-// > "Core variables and mixins"
+// > "Core variables (…)"
 @import "bootstrap3/less/variables.less";
 
-  //
-  // > Override Variables
+// Bookstrap: Override Variables
+@import "bookstrap-variables.less";
 
-  // > Media queries breakpoints
-  
-  // > Tiny screen / phone
-  @screen-tiny:                30em;
-  @screen-phone:               @screen-tiny;
-  
-  // > Small screen / tablet
-  @screen-small:               60em;
-  @screen-tablet:              @screen-small;
-  
-  // > Medium screen / desktop
-  @screen-medium:              70em;
-  @screen-desktop:             @screen-medium;
-  
-  // > So media queries don't overlap when required, provide a maximum
-  @screen-small-max:           (@screen-medium - 1);
-  @screen-tablet-max:          @screen-small-max;
-  
-  // Large screen / wide desktop
-  @screen-large:               80em;
-  @screen-large-desktop:       @screen-large;
-  
-  // Point at which the navbar stops collapsing
-  @grid-float-breakpoint:     @screen-medium;
-
-
+// > (…) and mixins"
 @import "bootstrap3/less/mixins.less";
 
 // Reset bootstrap3/less/
@@ -39,39 +14,39 @@
 // Core bootstrap3/less/CSS
 @import "bootstrap3/less/scaffolding.less";
 @import "bootstrap3/less/type.less";
-// @import "bootstrap3/less/code.less";
+@import "bootstrap3/less/code.less";
 // @import "bootstrap3/less/grid.less";
 
 @import "bootstrap3/less/tables.less";
-@import "bootstrap3/less/forms.less";
-@import "bootstrap3/less/buttons.less";
+// @import "bootstrap3/less/forms.less";
+// @import "bootstrap3/less/buttons.less";
 
 // Components: bootstrap3/less/common
-@import "bootstrap3/less/component-animations.less";
+// @import "bootstrap3/less/component-animations.less";
 // @import "bootstrap3/less/glyphicons.less";
-@import "bootstrap3/less/dropdowns.less";
-@import "bootstrap3/less/list-group.less";
-@import "bootstrap3/less/panels.less";
+// @import "bootstrap3/less/dropdowns.less";
+// @import "bootstrap3/less/list-group.less";
+// @import "bootstrap3/less/panels.less";
 // @import "bootstrap3/less/wells.less";
-@import "bootstrap3/less/close.less";
+// @import "bootstrap3/less/close.less";
 
 // Components: bootstrap3/less/Nav
 @import "bootstrap3/less/navs.less";
-@import "bootstrap3/less/navbar.less";
-@import "bootstrap3/less/button-groups.less";
-@import "bootstrap3/less/breadcrumbs.less";
-@import "bootstrap3/less/pagination.less";
-@import "bootstrap3/less/pager.less";
+// @import "bootstrap3/less/navbar.less";
+// @import "bootstrap3/less/button-groups.less";
+// @import "bootstrap3/less/breadcrumbs.less";
+// @import "bootstrap3/less/pagination.less";
+// @import "bootstrap3/less/pager.less";
 
 // Components: bootstrap3/less/Popovers
-@import "bootstrap3/less/modals.less";
-@import "bootstrap3/less/tooltip.less";
-@import "bootstrap3/less/popovers.less";
+// @import "bootstrap3/less/modals.less";
+// @import "bootstrap3/less/tooltip.less";
+// @import "bootstrap3/less/popovers.less";
 
 // Components: bootstrap3/less/Misc
 // @import "bootstrap3/less/alerts.less";
 // @import "bootstrap3/less/thumbnails.less";
-@import "bootstrap3/less/media.less";
+// @import "bootstrap3/less/media.less";
 // @import "bootstrap3/less/labels.less";
 // @import "bootstrap3/less/badges.less";
 // @import "bootstrap3/less/progress-bars.less";
