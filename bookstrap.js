@@ -40,6 +40,13 @@ var DEBUG = false,
           console.log("Debug!");
           $('body').addClass('debug');
         }
+        
+        ['grid', 'stripes'].forEach(function (p) {
+          if (params[p]) {
+          console.log(p)
+            $('body').addClass(p);
+          }          
+        });
     
         // fun
         if (params.fun) {
