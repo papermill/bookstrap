@@ -142,7 +142,13 @@ function startup () {
     "target": "#TOC",
     "offset": 25 //px
   });
-  // $.fn.scrollspy().on('activate', function(){alert('a')})
+  
+  $('body [id]').each(function () {
+    $(this).on('activate', function (e) {
+      console.log(e);
+      console.log(e["target"].children);
+    })
+  });
   
   // util.TOC();
   
