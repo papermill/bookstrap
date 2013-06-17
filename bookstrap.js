@@ -72,8 +72,7 @@ var hacks = {
   // fix ID's ending with a dot
   'fixIDsAndHrefs': function () {
     
-    var ids = [], hrefs = [],
-        regex = /^([\w|\.|\-]+)(\.)$/;
+    var ids = [], hrefs = [];
     
     // jquery: loop over all elements with an 'id' property
     $('[id]').each(function() {
@@ -89,10 +88,13 @@ var hacks = {
     ids.forEach(function (id) {
       
       // is last character a "." ?
-      if (regex.test(id)) {
+      if (id.indexOf('.') !== -1) {
         
         // remove the trailing dot (last char)
-        var fixedid = id.replace(regex, '$1');
+        var fixedid = id;
+        while (fixedid.indexOf('.') !== -1) {
+          fixedid = fixedid.replace(/\./,'');
+        }
         
         util.debug("fixed:", fixedid);
         
