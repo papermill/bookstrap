@@ -10,6 +10,7 @@ $if(date-meta)$
   <meta name="dcterms.date" content="$date-meta$">
 $endif$
   <title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -50,7 +51,7 @@ $endif$
 $endif$
 $if(toc)$
 <nav id="$idprefix$TOC">
-<p>Table of Contents:</p>
+<h4 class="nav">Table of Contents:</h4>
 $toc$
 </nav>
 $endif$
