@@ -35,14 +35,14 @@ var DEBUG = false,
         console.log('parameters: ', params);
   
         // debug
-        if (params.debug === true) {
+        if (params.debug) {
           window.DEBUG=true;
           console.log("Debug!");
           $('body').addClass('debug');
         }
     
         // fun
-        if (params.fun === true) {
+        if (params.fun) {
           window.FUN=true;
           console.log("Fun!");
           $('body').addClass('fun');
