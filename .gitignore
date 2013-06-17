@@ -1,2 +1,4 @@
-*.css
-*.html
+bookstrap.css
+Samples/*.css
+Samples/*.html
+Samples/*.js
