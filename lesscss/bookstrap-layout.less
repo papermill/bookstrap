@@ -39,13 +39,13 @@ header, #TOC, .container {
 @toc-width: 18em;
 
 // target size variables
-@mid-width: 58em;
-@full-width: 70em;
-@large-width: 92em;
+@min-width: (@page-width) + (1.25 * @page-margin);
+@full-width: (@toc-width) + (@page-width) + (1.25 * @page-margin);
 
 
-// if the screen has the minimum widht to show a 'page', apply basic layout
-@media screen and (min-width: ((@page-width) + (1.25 * @page-margin))) {
+// if the screen has the minimum width to show a 'page', 
+// apply basic layout
+@media screen and (min-width: (@min-width)) {
  
   body {
     font-size: 12pt;
@@ -58,13 +58,15 @@ header, #TOC, .container {
     width: @page-width;
   }
   
-  header, .container {
-  }
-  
 }
 
-// if there is enough space for a sidebar, apply sidebar layout
-@media screen and (min-width: ((@toc-width) + (@page-width) + (1.25 * @page-margin))) {
+// if there is enough space for a sidebar, 
+// apply sidebar layout
+@media screen and (min-width: (@full-width)) {
+  
+  header, .container {
+    margin-left: ((@toc-width) + (@page-margin));
+  }
   
   #TOC {
     margin: 0 0 2em 0;
@@ -75,14 +77,47 @@ header, #TOC, .container {
     overflow-y: scroll;
   }
 	
-  header, .container {
-    margin-left: ((@toc-width) + (@page-margin));
-    margin-right: @page-margin;
-  }
-  
 }
 
-@media screen and (min-width: @large-width) {
+// even bigger sidebars
+@media screen and (min-width: (@full-width + 4 + 2)) {
+  
+  header, .container {
+    margin-left: ((@toc-width) + (@page-margin) + 4);
+  }
+  
+  #TOC {
+    width: ((@toc-width) + 4);
+  }
+	
+}
+
+@media screen and (min-width: (@full-width + 8 + 2 + 1)) {
+  
+  header, .container {
+    margin-left: ((@toc-width) + (@page-margin) + 8 + 1);
+  }
+  
+  #TOC {
+    width: ((@toc-width) + 8);
+  }
+	
+}
+
+// @media screen and (min-width: (@full-width + 12)) {
+//   
+//   header, .container {
+//     margin-left: ((@toc-width) + (@page-margin) + 12);
+//   }
+//   
+//   #TOC {
+//     width: ((@toc-width) + 12);
+//   }
+//   
+// }
+
+// bigger font size for ~15" screens
+@media screen and (min-width: ((@full-width) + ((@toc-width) + 8 + 1))) {
   
   body {
     font-size: 14pt;
