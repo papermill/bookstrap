@@ -1,0 +1,97 @@
+/* TOC */
+
+#TOC {
+  
+  padding: 0 1em 1em; // no padding on top
+  
+  &, * {
+  	line-height: 1.5em; 
+  	list-style-position: outside;
+  	list-style: none;
+    // background-color: darken(@light, 6%)
+  }
+  
+  a {
+    color: lighten(@dark, 11%);
+  }
+  
+  ul {
+    padding: 0;
+  
+    ul {
+      padding: 0 1em;
+    }
+  }
+  
+  ul li { 
+  	font-weight: 300;
+  }
+  ul li.active {
+    font-weight: 700;
+    background-color: @light;
+  }
+  
+  > .nav {
+    margin-top: 1em;
+  }
+
+  .nav > li > a {
+    padding: 0;
+    line-height: 1.5em;
+  }
+  
+  // hack
+  .footnoteRef {
+    display:none;
+  }
+}
+
+
+#TOC > li > a {
+
+  border-bottom: 0.2em solid transparent;
+
+  &:hover, 
+  &:focus {
+    border-color: @dark;
+  }
+}
+
+/*
+#TOC > ul:before {
+	content: "Inhaltsverzeichnis\:";
+	font-weight: normal;
+	text-transform: uppercase;
+
+}
+
+*/
+.toc-section-number, 
+.header-section-number { 
+	font-weight: 100;
+/* 	hack */
+  display: none;
+}
+
+
+#TOC ul li ul li { 
+	font-weight: 400;
+/* 	font-size: 0.85em; */
+}
+
+/* dont show 3rd level headings in TOC */
+#TOC ul li ul li ul { 
+/*
+	display: none;
+	visibility: hidden;
+*/
+}
+
+/*  dont show emphasized text in TOC */
+#TOC nav > * > em {
+/*
+	display: none;
+	visibility: hidden;
+*/
+}
+

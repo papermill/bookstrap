@@ -1,0 +1,55 @@
+/* DEBUG */
+
+/* @color: rgba(200, 0, 0, .5); */
+@debuggridcolor: hsla(0, 0%, 0%, 10%);
+@debuggridcolor_bg: hsla(0, 0%, 0%, 100%);
+@debuggridcolor_fun: hsla(0, 0%, 0%, 10%);
+
+
+
+.emGrid (@color, @bgcolor)  {
+  background-size: 2em 2em;
+  background-color: @bgcolor;
+  background-image: -webkit-linear-gradient(transparent 50%, @color 50%,  @color),
+                    -webkit-linear-gradient(0deg, transparent 50%,  @color 50%,  @color);
+  background-image: -moz-linear-gradient(transparent 50%, @color 50%, @color),
+                    -moz-linear-gradient(0deg, transparent 50%, @color 50%, @color);
+  background-image: linear-gradient(transparent 50%, @color 50%, @color),
+                    linear-gradient(90deg, transparent 50%, @color 50%, @color);
+  -pie-background: linear-gradient(transparent 50%, @color 50%, @color) 0 0 / 50px 50px,
+                   linear-gradient(90deg, transparent 50%, @color 50%, @color) 0 0 / 50px 50px white;
+  behavior: url(/pie/PIE.htc);
+}
+
+
+
+.emStripes (@color, @bgcolor) {
+  background-size: 2em 2em;
+  background-color: @bgcolor;
+  background-image: -webkit-linear-gradient(0deg, transparent 50%,  @color 50%,  @color);
+  background-image: -moz-linear-gradient(0deg, transparent 50%, @color 50%, @color);
+  background-image: linear-gradient(90deg, transparent 50%, @color 50%, @color);
+  -pie-background: linear-gradient(90deg, transparent 50%, @color 50%, @color) 0 0 / 2em 2em white;
+  behavior: url(/pie/PIE.htc);
+}
+
+body {
+
+  &.debug {
+    .emStripes(@debuggridcolor, white);
+  }
+  
+  &.grid {
+    .emGrid(@debuggridcolor, white);
+  }
+  
+  &.fun {
+
+    &, & #TOC, & .navbar {
+	  background-color: black;
+      .emGrid(lightsalmon, lightblue);
+    }
+  }
+}
+
+

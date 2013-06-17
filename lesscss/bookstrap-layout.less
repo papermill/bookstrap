@@ -1,26 +1,92 @@
 /*  Bookstrap! */
 
 // # Layout
+//  
+// The layout is "mobile-first", like bootstrapv3.
+// That means that the base css styles are targeted at small screens
+// and we use media-spezific declaration to target bigger screens.
+// 
+// Also of note: All sizes are em-based, that means the complete layout
+// is relative to the font size.
+
 
 body {
-  margin: 3em 1em;
-};
+  width: 100%;
+  margin-top: 3em;
+  font-size: 12pt;
+}
+
+header, #TOC, .container {
+  margin-left: 2em;
+  margin-right: 2em;  
+}
 
 #TOC {
   // visibility: hidden;
   // display: none;
-  margin: 0 0 2em 0;
-  width: 11em;
-}
-
-#sheet {
-  width: 40em;
-  padding-left: 4em;
-  padding-right: 4em;
+  // margin: 0 0 2em 0;
+  display: block;
 }
 
 
 section {
   padding-top: 2.8em;
   // width: 36em;
+}
+
+// element size variables
+@page-margin: 4em;
+@page-width: 36em;
+@toc-width: 18em;
+
+// target size variables
+@mid-width: 58em;
+@full-width: 70em;
+@large-width: 92em;
+
+
+// if the screen has the minimum widht to show a 'page', apply basic layout
+@media screen and (min-width: ((@page-width) + (1.25 * @page-margin))) {
+ 
+  body {
+    font-size: 12pt;
+    margin-top: 3em;
+  }
+  
+  header, #TOC, .container {
+    margin-left: @page-margin;
+    margin-right: @page-margin;  
+    width: @page-width;
+  }
+  
+  header, .container {
+  }
+  
+}
+
+// if there is enough space for a sidebar, apply sidebar layout
+@media screen and (min-width: ((@toc-width) + (@page-width) + (1.25 * @page-margin))) {
+  
+  #TOC {
+    margin: 0 0 2em 0;
+    top: 0;
+    height:100%;
+    width: @toc-width;
+    position: fixed;
+    overflow-y: scroll;
+  }
+	
+  header, .container {
+    margin-left: ((@toc-width) + (@page-margin));
+    margin-right: @page-margin;
+  }
+  
+}
+
+@media screen and (min-width: @large-width) {
+  
+  body {
+    font-size: 14pt;
+  }
+  
 }
