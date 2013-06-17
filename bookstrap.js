@@ -147,9 +147,12 @@ function startup () {
   bootstrap();
   
   // activate bootstrap's scrollspy
-  $('body').scrollspy({
+  // - add data to targets
+  $('body').attr('data-spy', 'scroll');
+  // - activate srollspy with target #TOC
+  $('[data-spy="scroll"]').scrollspy({
     "target": "#TOC",
-    "offset": 25 //px
+    "offset": 0 //px
   });
   
   $('body [id]').each(function () {
@@ -158,6 +161,17 @@ function startup () {
       console.log(e["target"].children);
     })
   });
+  
+  // event handler when window sizing changes (also on zoom in webkit)
+  window.onresize = function resizeHandler(argument) {
+    util.debug("Event Handler: Resize!");
+    
+    // refresh scrollspy
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh')
+    });
+
+  };
   
   // util.TOC();
   
