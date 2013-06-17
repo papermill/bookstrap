@@ -58,6 +58,15 @@ $endif$
 <div id="content" class="container">
 $body$
 </div>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+  <ul class="nav">
+      <li class="active"><a class="brand" href="#">$if(shorttitle)$$shorttitle$$else$$title$$endif$</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  </div>
+</nav>
 $for(include-after)$
 $include-after$
 $endfor$
