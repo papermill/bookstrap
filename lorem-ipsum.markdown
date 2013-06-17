@@ -28,7 +28,26 @@ Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lor
 
 Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus.
 
-Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.
+    Donec(mollis, hendrerit, risus); 
+    Phasellus(nec, sem, "in justo"); 
+    
+    log("pellentesque facilisis.")
+    
+    Etiam(imperdiet, imperdiet, orci);
+    
+    Nunc = {
+      nec: "neque",
+      Phasellus: ["leo dolor", "tempus non", "auctor et", "hendrerit quis", "nisi"]
+    };
+    
+    Curabitur(ligula, sapien, tincidunt);
+    non() {
+      euismod(vitae);
+      posuere(imperdiet);
+      leo();
+    }
+    
+    Maecenas = "malesuada. Praesent congue erat at massa.";
 
 Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit.
 
@@ -41,6 +60,29 @@ Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede.
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit.
+
+```javascript
+Donec(mollis, hendrerit, risus); 
+Phasellus(nec, sem, "in justo"); 
+
+log("pellentesque facilisis.")
+
+Etiam(imperdiet, imperdiet, orci);
+
+Nunc = {
+  nec: "neque",
+  Phasellus: ["leo dolor", "tempus non", "auctor et", "hendrerit quis", "nisi"]
+};
+
+Curabitur(ligula, sapien, tincidunt);
+non() {
+  euismod(vitae);
+  posuere(imperdiet);
+  leo();
+}
+
+Maecenas = "malesuada. Praesent congue erat at massa.";
+```
 
 Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.
 

@@ -8,7 +8,7 @@ samples: less
 	cp assets/jquery.js Samples/jquery.js
 	cp bootstrap3/_gh_pages/assets/js/bootstrap.js Samples/bootstrap.js
 	cp bookstrap.js Samples/bookstrap.js
-	pandoc --smart -t html5 -i ../Samples.markdown/lorem-ipsum.markdown -o Samples/lorem-ipsum.html -c bookstrap.css --toc --template bookstrap-template.html --include-after-body=bookstrap-post.html
+	pandoc --smart -t html5 -i lorem-ipsum.markdown -o Samples/lorem-ipsum.html -c bookstrap.css --toc --template bookstrap-template.html --include-after-body=bookstrap-post.html
 	pandoc --smart -t html5 -i ../Samples.markdown/pandoc_README.markdown -o Samples/pandoc_README.html -c bookstrap.css --toc --template bookstrap-template.html --include-after-body=bookstrap-post.html
 	pandoc --smart -t html5 -i ../Samples.markdown/underscore_README.markdown -o Samples/underscore_README.html -c bookstrap.css --toc --template bookstrap-template.html --include-after-body=bookstrap-post.html
 	pandoc --smart -s -t html5 -i ../Samples.markdown/pg/hp.md -o Samples/pg_hp.html -c bookstrap.css --toc --template bookstrap-template.html --include-after-body=bookstrap-post.html
