@@ -4,19 +4,18 @@
 
 // Since the reader is based on the `bootstrap` framework, we are going 
 // to import a lot of their source files first.
-
+// 
+// Our own variables are also imported in there.
+// 
 @import "imports.less";
 
 @import "bookstrap-base.less";
-@import "bookstrap-layout.less";
 @import "bookstrap-typo.less";
-
+@import "bookstrap-colors.less";
 @import "bookstrap-toc.less";
+
+@import "bookstrap-layout.less";
+@import "bookstrap-media.less";
 
 
 @import "bookstrap-debug.less";
-
-.navbar-inverse {
-	background-color: @dark;
-	box-shadow: inset 0 -0.9em 0.5em -1em black;
-}

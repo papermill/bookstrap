@@ -40,12 +40,20 @@ body {
   }
   
   &.grid {
-    &, & #TOC, & #TOC > .nav {
-      .emGrid(@debuggridcolor, white);
-    }
+    .emGrid(@debuggridcolor, white);
+    // &, & #TOC, & #TOC > .nav {
+    //   .emGrid(@debuggridcolor, white);
+    // }
     & #TOC > .nav {
       background-position: 0 -0.4em;
     }
+  }
+  
+  &.stripes {
+    .emStripes(@debuggridcolor, white);
+    // &, & #TOC, & #TOC > .nav {
+    //   .emStripes(@debuggridcolor, white);
+    // }
   }
   
   &.fun {
