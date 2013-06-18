@@ -6,3 +6,5 @@ node_modules
 docs
 /bootstrap*/
 /assets/
+/Samples/
+/third-party/
